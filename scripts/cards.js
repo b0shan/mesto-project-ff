@@ -1,26 +1,26 @@
 const initialCards = [
     {
-      name: "Архыз",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+      name: "Хибины",
+      link: "https://images.unsplash.com/photo-1694975785664-052748f87fc3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUQxJTg1JUQwJUI4JUQwJUIxJUQwJUI4JUQwJUJEJUQxJThCfGVufDB8fDB8fHww",
     },
     {
-      name: "Челябинская область",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+      name: "Красноярский край",
+      link: "https://images.unsplash.com/photo-1597125760773-b0166e249ea7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
-      name: "Иваново",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+      name: "Владивосток",
+      link: "https://images.unsplash.com/photo-1563941433-b6a094653ed2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
       name: "Камчатка",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+      link: "https://images.unsplash.com/photo-1557094005-176cbfe3554d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
     },
     {
-      name: "Холмогорский район",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+      name: "Мурманская область",
+      link: "https://images.unsplash.com/photo-1633974893032-aea04d1d17cd?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fE11cm1hbnNrfGVufDB8fDB8fHww",
     },
     {
       name: "Байкал",
-      link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+      link: "https://images.unsplash.com/photo-1584891686381-c099f8cbd70c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
     }
 ];

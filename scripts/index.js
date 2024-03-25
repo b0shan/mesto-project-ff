@@ -8,9 +8,11 @@ const places = document.querySelector('.places__list');
 // @todo: Функция создания карточки
 function createCard(name, link, deleteCard) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
+    const deleteButton = card.querySelector('.card__delete-button');
+    const image = card.querySelector('.card__image');
     card.querySelector('.card__image').src = link;
     card.querySelector('.card__title').textContent = name;
-    const deleteButton = card.querySelector('.card__delete-button');
+    image.setAttribute('alt', `Пейзаж ${name}`);
     deleteButton.addEventListener('click', deleteCard);
     return card;
 }

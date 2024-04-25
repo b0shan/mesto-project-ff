@@ -30,4 +30,3 @@ initialCards.forEach((item) => {
 });
 
     
-//test 2

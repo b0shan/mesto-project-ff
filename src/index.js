@@ -10,7 +10,7 @@ function createCard(name, link, deleteCard) {
     const card = cardTemplate.querySelector('.card').cloneNode(true);
     const deleteButton = card.querySelector('.card__delete-button');
     const image = card.querySelector('.card__image');
-    image.src = link;
+    card.querySelector('.card__image').src = link;
     card.querySelector('.card__title').textContent = name;
     image.setAttribute('alt', `Пейзаж ${name}`);
     deleteButton.addEventListener('click', deleteCard);
@@ -30,3 +30,4 @@ initialCards.forEach((item) => {
 });
 
     
+

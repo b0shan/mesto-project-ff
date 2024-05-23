@@ -24,3 +24,5 @@ const initialCards = [
       link: "https://images.unsplash.com/photo-1584891686381-c099f8cbd70c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D",
     }
 ];
+
+export { initialCards };

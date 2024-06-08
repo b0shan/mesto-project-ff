@@ -29,15 +29,12 @@ const popups = document.querySelectorAll(".popup");
 
 // @todo: Вывести карточки на страницу
 initialCards.forEach((item) => {
-    const card = createCard(item.name, item.link, likeCard, deleteCard, handleImageClick);
-    places.append(card);
+  renderCard(item, 'append') 
 });
 
 
 function renderCard(item, method = "prepend") {
-    const card = createCard(item.name, item.link, likeCard, deleteCard, () =>
-      handleImageClick(item)
-    );
+    const card = createCard(item.name, item.link, likeCard, deleteCard, handleImageClick);
     places[ method ](card);
 }
   

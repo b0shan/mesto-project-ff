@@ -111,7 +111,15 @@ function handleImageClick(item) {
   openModal(viewImage)
 }
 
-
+return fetch('https://nomoreparties.co/v1/wff-cohort-10/cards', {
+  headers: {
+    authorization: '0f73b60f-f185-4e15-bf4b-6b558e78923f'
+  }
+})
+  .then(res => res.json())
+  .then((result) => {
+    console.log(result);
+  }); 
 
 
 

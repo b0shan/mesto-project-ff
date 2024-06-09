@@ -6,6 +6,8 @@ import { createCard,
   deleteCard,
 } from './components/card.js'
 import { openModal, closeModal} from './components/modal.js'
+import { validator } from './components/validator.js';
+import { config } from './components/constants.js';
 
 
 //переменные
@@ -26,6 +28,21 @@ const placeInputName = handleFormSubmit.querySelector(".popup__input_type_card-n
 const placeUrlInput = handleFormSubmit.querySelector(".popup__input_type_url");
 const popups = document.querySelectorAll(".popup");
 
+const buttonProfileAdd = document.querySelector('.profile__add-button');
+const cardForm = document.querySelector('#form-card');
+const profileFormValidator = new validator(config, profileForm);
+const cardFormValidator = new validator(config, cardForm);
+
+const config = {
+  formSelector: '.form',
+  inputSelector: '.form__item',
+  inputErrorClass: 'form__item_type_error',
+  errorClass: 'form__error_visible',
+  submitButtonSelector: '.form__save-button',
+  inactiveButtonClass: 'form__save-button_disabled',
+}
+
+
 
 // @todo: Вывести карточки на страницу
 initialCards.forEach((item) => {
@@ -42,6 +59,8 @@ function renderCard(item, method = "prepend") {
 editBtn.addEventListener("click", () => {
     inputName.value = textName.textContent;
     inputJob.value = textJob.textContent;
+    profileFormValidator.toggleSubmitButtonState(profileForm, config);
+    profileFormValidator.resetValidation(profileForm, config);
     openModal(editWindow);
 });
   
@@ -75,6 +94,11 @@ popups.forEach((popup) => {
     });
 });
 
+cardForm.addEventListener('submit', handleFormSubmit);
+buttonProfileAdd.addEventListener('click', openModal);
+cardFormValidator.enableValidation();
+
+
 
 //профиль
 function handleProfileFormSubmit(evt) {
@@ -87,6 +111,8 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+editBtn.addEventListener('click', editBtn);
+profileFormValidator.enableValidation();
 
 //просмотр фото
 function handleImageClick(item) {
@@ -95,3 +121,8 @@ function handleImageClick(item) {
   popupText.textContent = item.name;
   openModal(viewImage)
 }
+
+
+
+
+

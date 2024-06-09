@@ -6,6 +6,8 @@ import { createCard,
   deleteCard,
 } from './components/card.js'
 import { openModal, closeModal} from './components/modal.js'
+import { FormValidator } from './components/valid.js'
+
 
 
 //переменные
@@ -95,3 +97,13 @@ function handleImageClick(item) {
   popupText.textContent = item.name;
   openModal(viewImage)
 }
+
+//Валидация
+FormValidator({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',//
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+}); 

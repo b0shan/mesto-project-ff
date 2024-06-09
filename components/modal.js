@@ -1,5 +1,7 @@
 //открытие закрытие попапа
 export function openModal(modal) {
+    cardFormValidator.toggleSubmitButtonState(cardForm, config);
+    cardFormValidator.resetValidation(cardForm, config);
     modal.classList.add("popup_is-opened");
     window.addEventListener("keydown", closeEscape);
 }

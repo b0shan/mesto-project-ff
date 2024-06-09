@@ -6,8 +6,8 @@ import { createCard,
   deleteCard,
 } from './components/card.js'
 import { openModal, closeModal} from './components/modal.js'
-import { FormValidator } from './components/valid.js'
-
+//import { validator } from './components/validator.js';
+import { config } from './components/constants.js';
 
 
 //переменные
@@ -28,6 +28,10 @@ const placeInputName = handleFormSubmit.querySelector(".popup__input_type_card-n
 const placeUrlInput = handleFormSubmit.querySelector(".popup__input_type_url");
 const popups = document.querySelectorAll(".popup");
 
+const buttonProfileAdd = document.querySelector('.profile__add-button');
+const cardForm = document.querySelector('#form-card');
+const profileFormValidator = new validator(config, profileForm);
+const cardFormValidator = new validator(config, cardForm);
 
 // @todo: Вывести карточки на страницу
 initialCards.forEach((item) => {
@@ -44,6 +48,8 @@ function renderCard(item, method = "prepend") {
 editBtn.addEventListener("click", () => {
     inputName.value = textName.textContent;
     inputJob.value = textJob.textContent;
+    profileFormValidator.toggleSubmitButtonState(profileForm, config);
+    profileFormValidator.resetValidation(profileForm, config);
     openModal(editWindow);
 });
   
@@ -77,6 +83,11 @@ popups.forEach((popup) => {
     });
 });
 
+cardForm.addEventListener('submit', handleFormSubmit);
+buttonProfileAdd.addEventListener('click', openModal);
+cardFormValidator.enableValidation();
+
+
 
 //профиль
 function handleProfileFormSubmit(evt) {
@@ -89,6 +100,8 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+editBtn.addEventListener('click', editBtn);
+profileFormValidator.enableValidation();
 
 //просмотр фото
 function handleImageClick(item) {
@@ -98,12 +111,7 @@ function handleImageClick(item) {
   openModal(viewImage)
 }
 
-//Валидация
-FormValidator({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',//
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-}); 
+
+
+
+

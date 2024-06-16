@@ -1,17 +1,27 @@
-//открытие закрытие попапа
-export function openModal(modal) {
-    modal.classList.add("popup_is-opened");
-    window.addEventListener("keydown", closeEscape);
-}
+const handleDocumentKeydown = (event) => {
+  if (event.key === 'Escape') {
+    closeModal(document.querySelector('.popup_is-opened'));
+  }
+};
 
-export function closeModal(modal) {
-    modal.classList.remove("popup_is-opened");
-    window.removeEventListener("keydown", closeEscape);
-}
+const handleModalClick = (event) => {
+  if (event.target.classList.contains('popup_is-opened')) {
+    return closeModal(event.target);
+  }
 
-function closeEscape(evt) {
-    if (evt.code === "Escape") {
-      const item = document.querySelector(".popup_is-opened");
-      closeModal(item);
-    }
-}
+  if (event.target.closest('.popup__close')) {
+    return closeModal(event.target.closest('.popup'));
+  }
+};
+
+const openModal = (element) => {
+  element.classList.add('popup_is-opened');
+  document.addEventListener('keydown', handleDocumentKeydown);
+};
+
+const closeModal = (element) => {
+  document.removeEventListener('keydown', handleDocumentKeydown);
+  element.classList.remove('popup_is-opened');
+};
+
+export { openModal, closeModal, handleModalClick };
